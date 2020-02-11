@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <fieldset>
+        <legend>Inscription</legend>
+        <form method="POST" action="/api/user">
+            <p>
+                <label for="email">
+                    Adresse Email :
+                </label>
+                <input name="email" type="email" id="email" />
+                <label for="pseudo">
+                    Pseudo :
+                </label>
+                <input name="pseudo" type="text" id="pseudo" />
+                <label for="password">
+                    Mot de Passe :
+                </label>
+                <input type="password" name="password" id="password"/>
+            </p>
+            <p><input type="submit" value="Inscription" /></p></form>
+            <a href="/register">Pas encore inscrit ?</a>
+        </form>
+    </fieldset>
+</body>
+</html>

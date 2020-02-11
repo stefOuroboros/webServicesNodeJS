@@ -1,8 +1,10 @@
-const db = require('nedb');
+const Generique = require('./Generique.js');
 
-class Task {
 
-    constructor() {
+class Task extends Generique {
+
+    constructor(object = {}) {
+        super();
         this.id         = null;
         this.user_id    = null;
         this.title      = null;
@@ -16,9 +18,6 @@ class Task {
     }
 
 }
-
-
-Task.db         = new db({ filename : __dirname + '/../../tmp/task.datastore', autoload : true});
 
 Task.apify      = true;
 module.exports  = Task;

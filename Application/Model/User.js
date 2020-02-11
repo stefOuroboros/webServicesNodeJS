@@ -1,7 +1,9 @@
-const db = require('nedb');
-class User {
+const Generique = require('./Generique.js');
 
-    constructor() {
+class User extends Generique {
+
+    constructor(object = {}) {
+        super();
         this.id         = null;
         this.firstName  = null;
         this.lastName   = null;
@@ -9,8 +11,8 @@ class User {
         this.password   = null;
         this.tasks      = [];
 
-        for(let property of object) {
-            if(this[property]) {
+        for(let property in object) {
+            if(!this[property]) {
                 this[property] = object[property];
             }
         }
@@ -18,7 +20,6 @@ class User {
 
 }
 
-User.db     = new db({ filename : __dirname + '/../../tmp/user.datastore', autoload : true});
 User.apify  = true;
 
 module.exports = User;
